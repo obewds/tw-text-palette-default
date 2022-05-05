@@ -1,44 +1,39 @@
 // ./tests/TwTextPaletteDefault.test.js
 
-import { mount } from '@vue/test-utils'
-import TwTextPaletteDefault from '../src/components/TwTextPaletteDefault.vue'
+import { twTextPaletteDefault } from '../src/index'
 
 
 
-test('TwTextPaletteDefault.vue component mounts successfully', async () => {
+test('twTextPaletteDefault component returns a truthy value', async () => {
 
-    expect(TwTextPaletteDefault).toBeTruthy()
+    expect(twTextPaletteDefault).toBeTruthy()
 
 })
 
 
 
-test('TwTextPaletteDefault.vue component text prop accepts a string value', async () => {
+test('twTextPaletteDefault.default component returns an object with a truthy default property', async () => {
 
-    const testString = 'Test String Value'
+    expect(twTextPaletteDefault.default).toBeTruthy()
 
-    const wrapper = mount(TwTextPaletteDefault, {
-        props: {
-            text: testString
-        },
-    })
-
-    expect(wrapper.text()).toContain(testString)
-    
 })
 
 
 
-test('TwTextPaletteDefault.vue component default slot accepts an element node with a child text node', async () => {
+test('twTextPaletteDefault.default.colors component returns an object with a truthy colors property', async () => {
 
-    const testStrLiteral = `<div>Test String Value</div>`
+    expect(twTextPaletteDefault.default.colors).toBeTruthy()
 
-    const wrapper = mount(TwTextPaletteDefault, {
-        slots: {
-            default: testStrLiteral
-        },
-    })
+})
 
-    expect(wrapper.html()).toContain(testStrLiteral)
-    
+
+
+test('twTextPaletteDefault component returns an object with the standard five default color names', async () => {
+
+    expect(twTextPaletteDefault.default.colors['default']).toBe('')
+    expect(twTextPaletteDefault.default.colors['error']).toBeTruthy()
+    expect(twTextPaletteDefault.default.colors['primary']).toBeTruthy()
+    expect(twTextPaletteDefault.default.colors['secondary']).toBeTruthy()
+    expect(twTextPaletteDefault.default.colors['success']).toBeTruthy()
+
 })

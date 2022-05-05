@@ -6,14 +6,13 @@ head:
 ---
 
 
-::: danger
-This is an example GitHub Pages site and is NOT intended for actual use in real projects/products!
-:::
 
 
 # @obewds/tw-text-palette-default
 
-Welcome to the docs page for OBE:WDS's `TwTextPaletteDefault.vue` component for [Vue.js](https://vuejs.org/)!
+Welcome to the docs page for OBE:WDS's `twTextPaletteDefault` component for [Vue.js](https://vuejs.org/)!
+
+<br>
 
 
 
@@ -24,107 +23,59 @@ Welcome to the docs page for OBE:WDS's `TwTextPaletteDefault.vue` component for 
 npm install @obewds/tw-text-palette-default --save-dev
 ```
 
-
-
-
-## Import Component
+<br>
 
 
 
 
-### Template syntax
+## Object Schema
 
-```html{2}
-<template>
-    <TwTextPaletteDefault/>
-</template>
+The object returned when importing Tailwind CSS background default color palette has the following schema:
+
+```javascript
+{
+    'default': {
+        colors: {
+            'default': '',
+            'error': '...',
+            'primary': '...',
+            'secondary': '...',
+            'success': '...',
+        },
+    },
+}
 ```
 
+<br>
 
 
 
-### Script setup syntax
 
-```html{2}
+
+## Use Example
+
+```html{3,8,16}
 <script setup lang="ts">
-    import { TwTextPaletteDefault } from '@obewds/tw-text-palette-default'
-</script>
-```
 
+    import { twTextPaletteDefault } from '@obewds/tw-text-palette-default'
 
-
-
-### Composition API syntax
-
-```html{3,6}
-<script lang="ts">
-    import { defineComponent } from 'vue'
-    import { TwTextPaletteDefault } from '@obewds/tw-text-palette-default'
-
-    export default defineComponent({
-        components: { TwTextPaletteDefault }
+    const props = defineProps({
+        textClasses: {
+            type: String,
+            default: twTextPaletteDefault.default.colors.primary,
+        },
     })
+
 </script>
-```
 
-
-
-
-## Props
-
-
-
-
-### text
-
-:white_check_mark: - Type `String`  
-:x: - Not Required  
-:x: - Doesn't Validate
-
-
-```html{2}
 <template>
-    <TwTextPaletteDefault text="My text prop string"/>
+
+    <div :class="textClasses">
+        {{ textClasses }}
+    </div>
+
 </template>
 ```
-
-Outputs:
-
-```html
-<div>My text prop string</div>
-```
-
-::: warning
-If both the `text` prop and `slot` content are used, then the `text` prop takes precidence and the `slot` content will **NOT** render!
-:::
-
-
-
-
-## Slots
-
-
-
-
-### default
-
-```html{2-4}
-<template>
-    <TwTextPaletteDefault>
-        My slot content
-    </TwTextPaletteDefault>
-</template>
-```
-
-Outputs:
-
-```html
-<div>My slot content</div>
-```
-
-::: danger
-If both the `text` prop and `slot` content are used, then the `text` prop takes precidence and the `slot` content will **NOT** render!
-:::
 
 
 

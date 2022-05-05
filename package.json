@@ -12,12 +12,11 @@
     ".": {
       "import": "./dist/tw-text-palette-default.es.js",
       "require": "./dist/tw-text-palette-default.umd.js"
-    },
-    "./src": "./src/components/TwTextPaletteDefault.vue"
+    }
   },
   "files": [
     "dist",
-    "src/components",
+    "src/data",
     "tests"
   ],
   "types": "./dist/types/index.d.ts",
