@@ -1,1 +1,1 @@
-export { default as ViteVueTsCompoPkgStarter } from './components/ViteVueTsCompoPkgStarter.vue'
+export { default as twTextPaletteDefault } from './data/tw-text-palette-default'
