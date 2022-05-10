@@ -1,7 +1,7 @@
 {
   "name": "@obewds/tw-text-palette-default",
   "description": "The @obewds/tw-text-palette-default modular design system component for Vue.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "@oberocks",
   "homepage": "https://obewds.github.io/tw-text-palette-default/",
   "license": "MIT",
